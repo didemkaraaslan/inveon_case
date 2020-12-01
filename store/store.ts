@@ -7,7 +7,7 @@ import {
 import logger from "redux-logger";
 import thunk from "redux-thunk";
 import { MakeStore, createWrapper, Context, HYDRATE } from "next-redux-wrapper";
-
+import { composeWithDevTools } from "redux-devtools-extension";
 export interface State {
   tick: string;
 }
@@ -30,7 +30,7 @@ const reducer = (
 
 // create a makeStore function
 const makeStore: MakeStore<State> = (context: Context) =>
-  createStore(reducer, applyMiddleware(logger, thunk));
+  createStore(reducer, composeWithDevTools(applyMiddleware(logger, thunk)));
 
 // export an assembled wrapper
 export const wrapper = createWrapper<State>(makeStore, { debug: true });
