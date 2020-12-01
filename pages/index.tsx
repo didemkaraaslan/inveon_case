@@ -1,13 +1,18 @@
+import React, { useEffect } from "react";
 import Head from "next/head";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { wrapper, State } from "../store/store";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import styles from "../styles/Home.module.css";
-
+import { getProducts } from "../store/actions/product";
+const fs = require("fs-extra");
+import * as types from "../store/actions/types";
 export default function Home() {
-  const { tick } = useSelector<State, State>((state) => state);
+  const dispatch = useDispatch();
+  const { products } = useSelector<State, State>((state) => state);
+
+  console.log(products);
 
   return (
     <Container maxWidth="sm">
@@ -18,15 +23,14 @@ export default function Home() {
         <Typography color="secondary" variant="h1" component="h1" gutterBottom>
           Secondary
         </Typography>
-        {tick}
       </Box>
     </Container>
   );
 }
 
-export const getStaticProps = wrapper.getStaticProps(({ store, preview }) => {
-  store.dispatch({
-    type: "TICK",
-    payload: "was set in other page " + preview,
-  });
-});
+export const getStaticProps = wrapper.getStaticProps(
+  async ({ store, preview }) => {
+    const { products } = await fs.readJson("data/products.json");
+    store.dispatch({ type: types.FETCH_PRODUCTS, payload: products });
+  }
+);

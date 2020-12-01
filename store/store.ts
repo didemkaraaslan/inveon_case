@@ -8,29 +8,32 @@ import logger from "redux-logger";
 import thunk from "redux-thunk";
 import { MakeStore, createWrapper, Context, HYDRATE } from "next-redux-wrapper";
 import { composeWithDevTools } from "redux-devtools-extension";
+import * as types from "./actions/types";
+import { color, size } from "../enum.js";
+
 export interface State {
-  tick: string;
+  products: Array<{
+    productID: string;
+    productName: string;
+    productPrice: number;
+    productColor: color;
+    productSize: size;
+    inStock: boolean;
+  }>;
 }
 
-// create your reducer
-const reducer = (
-  state: State = { tick: "Tick Tock toe" },
-  action: AnyAction
-) => {
+const reducer = (state: State = { products: [] }, action: AnyAction) => {
   switch (action.type) {
     case HYDRATE:
-      // Attention! This will overwrite client state! Real apps should use proper reconciliation.
       return { ...state, ...action.payload };
-    case "TICK":
-      return { ...state, tick: action.payload };
+    case types.FETCH_PRODUCTS:
+      return { ...state, products: action.payload };
     default:
       return state;
   }
 };
 
-// create a makeStore function
 const makeStore: MakeStore<State> = (context: Context) =>
   createStore(reducer, composeWithDevTools(applyMiddleware(logger, thunk)));
 
-// export an assembled wrapper
 export const wrapper = createWrapper<State>(makeStore, { debug: true });
