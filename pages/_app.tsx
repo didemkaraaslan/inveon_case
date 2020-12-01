@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { FC, useEffect } from "react";
 import PropTypes from "prop-types";
 import { AppProps } from "next/app";
 import Head from "next/head";
@@ -6,8 +6,9 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../styles/theme";
 import "../styles/globals.css";
+import { wrapper } from "../store/store";
 
-function MyApp({ Component, pageProps }: AppProps) {
+const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
   React.useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector("#jss-server-side");
@@ -32,11 +33,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       </ThemeProvider>
     </React.Fragment>
   );
-}
-
-export default MyApp;
-
-MyApp.propTypes = {
-  Component: PropTypes.elementType.isRequired,
-  pageProps: PropTypes.object.isRequired,
 };
+
+export default wrapper.withRedux(WrappedApp);
