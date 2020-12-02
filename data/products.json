@@ -3,194 +3,112 @@
     {
       "productID": "5fc6862703344ec618989362",
       "productName": "Valdez",
+      "productImage": "https://cdn.dsmcdn.com/mnresize/415/622/ty9/product/media/images/20200901/11/9239780/79038583/2/2_org.jpg",
       "productPrice": 40,
       "productColor": "kırmızı",
       "productSize": "s",
+      "productCategory": "female",
       "inStock": true
     },
     {
       "productID": "5fc686279cf73f79e855477e",
       "productName": "Kayla",
+      "productImage": "https://cdn.dsmcdn.com/mnresize/415/622/ty12/product/media/images/20200908/12/10042281/82164697/1/1_org.jpg",
       "productPrice": 519,
       "productColor": "mavi",
       "productSize": "l",
+      "productCategory": "female",
       "inStock": true
     },
     {
       "productID": "5fc686275a07b2bcbb0fa192",
       "productName": "Elvira",
+      "productImage": "https://cdn.dsmcdn.com/mnresize/415/622/ty10/product/media/images/20200810/11/7703618/21677809/1/1_org.jpg",
       "productPrice": 190,
       "productColor": "mavi",
       "productSize": "xl",
+      "productCategory": "female",
       "inStock": false
     },
     {
       "productID": "5fc68627774dcff1ba1c8312",
       "productName": "Spence",
+      "productImage": "https://cdn.dsmcdn.com//ty14/product/media/images/20200928/8/12269561/83594655/1/1_org.jpg",
       "productPrice": 218,
       "productColor": "yeşil",
       "productSize": "s",
+      "productCategory": "female",
       "inStock": false
     },
     {
       "productID": "5fc686271db9932ca3070c5e",
       "productName": "Nadine",
+      "productImage": "https://cdn.dsmcdn.com//assets/product/media/images/20191213/9/1415237/59871534/1/1_org.jpg",
       "productPrice": 4,
       "productColor": "kırmızı",
       "productSize": "m",
+      "productCategory": "female",
       "inStock": true
     },
     {
       "productID": "5fc686277d76dc98e854ee34",
       "productName": "Rosetta",
+      "productImage": "https://cdn.dsmcdn.com//ty23/product/media/images/20201120/14/29176358/108749887/2/2_org.jpg",
       "productPrice": 309,
       "productColor": "kırmızı",
       "productSize": "s",
+      "productCategory": "male",
       "inStock": true
     },
     {
       "productID": "5fc686275536a01cde7f9c7f",
       "productName": "Odom",
+      "productImage": "https://cdn.dsmcdn.com//ty21/product/media/images/20201107/22/23541870/99518540/1/1_org_zoom.jpeg",
       "productPrice": 439,
       "productColor": "kırmızı",
       "productSize": "s",
+      "productCategory": "male",
       "inStock": false
     },
     {
       "productID": "5fc686279970a6b2be62feec",
       "productName": "Katheryn",
+      "productImage": "https://cdn.dsmcdn.com//ty26/product/media/images/20201123/18/30551917/81660231/1/1_org_zoom.jpeg",
       "productPrice": 159,
       "productColor": "mavi",
       "productSize": "s",
+      "productCategory": "male",
       "inStock": true
     },
     {
       "productID": "5fc686274a89f4da38fd4388",
       "productName": "Villarreal",
+      "productImage": "https://cdn.dsmcdn.com//ty17/product/media/images/20201021/18/18513656/84649443/1/1_org.jpg",
       "productPrice": 144,
       "productColor": "yeşil",
       "productSize": "l",
+      "productCategory": "male",
       "inStock": true
     },
     {
       "productID": "5fc686271010fd8a8de26016",
       "productName": "Kelly",
+      "productImage": "https://cdn.dsmcdn.com//ty11/product/media/images/20200914/9/10570136/86313926/1/1_org.jpg",
       "productPrice": 486,
       "productColor": "yeşil",
       "productSize": "xl",
+      "productCategory": "male",
       "inStock": false
     },
     {
       "productID": "5fc6862735525a319d2baaa4",
       "productName": "Viola",
+      "productImage": "https://cdn.dsmcdn.com//ty21/product/media/images/20201113/11/25560765/105114088/1/1_org.jpg",
       "productPrice": 498,
       "productColor": "mavi",
       "productSize": "l",
+      "productCategory": "female",
       "inStock": true
-    },
-    {
-      "productID": "5fc68627f45412a49ff8e5c1",
-      "productName": "Fields",
-      "productPrice": 116,
-      "productColor": "yeşil",
-      "productSize": "m",
-      "inStock": false
-    },
-    {
-      "productID": "5fc6862728388a3b91c68b8e",
-      "productName": "Hattie",
-      "productPrice": 99,
-      "productColor": "mavi",
-      "productSize": "s",
-      "inStock": false
-    },
-    {
-      "productID": "5fc686273932436d835cdfc1",
-      "productName": "Leach",
-      "productPrice": 47,
-      "productColor": "yeşil",
-      "productSize": "m",
-      "inStock": false
-    },
-    {
-      "productID": "5fc6862740e7ff134ccd8250",
-      "productName": "Kristine",
-      "productPrice": 459,
-      "productColor": "kırmızı",
-      "productSize": "l",
-      "inStock": true
-    },
-    {
-      "productID": "5fc68627a8e466d56939d497",
-      "productName": "Garner",
-      "productPrice": 333,
-      "productColor": "mavi",
-      "productSize": "l",
-      "inStock": false
-    },
-    {
-      "productID": "5fc6862779636ece179facaf",
-      "productName": "Hazel",
-      "productPrice": 201,
-      "productColor": "mavi",
-      "productSize": "xl",
-      "inStock": true
-    },
-    {
-      "productID": "5fc686276799b8f540ebf435",
-      "productName": "Jenkins",
-      "productPrice": 238,
-      "productColor": "mavi",
-      "productSize": "s",
-      "inStock": true
-    },
-    {
-      "productID": "5fc686271caed2dc14c7ed37",
-      "productName": "Avila",
-      "productPrice": 432,
-      "productColor": "yeşil",
-      "productSize": "xl",
-      "inStock": false
-    },
-    {
-      "productID": "5fc6862728a44fa0fd3fb767",
-      "productName": "Miranda",
-      "productPrice": 256,
-      "productColor": "yeşil",
-      "productSize": "l",
-      "inStock": true
-    },
-    {
-      "productID": "5fc68627d9f4054da2dc885a",
-      "productName": "Bowers",
-      "productPrice": 294,
-      "productColor": "yeşil",
-      "productSize": "l",
-      "inStock": true
-    },
-    {
-      "productID": "5fc686274e027ee6fa0d7309",
-      "productName": "Alice",
-      "productPrice": 466,
-      "productColor": "yeşil",
-      "productSize": "m",
-      "inStock": false
-    },
-    {
-      "productID": "5fc68627c0656fb629e4f0ed",
-      "productName": "Marisa",
-      "productPrice": 461,
-      "productColor": "mavi",
-      "productSize": "l",
-      "inStock": false
-    },
-    {
-      "productID": "5fc686278bb88eb9f604090f",
-      "productName": "Carlson",
-      "productPrice": 121,
-      "productColor": "mavi",
-      "productSize": "s",
-      "inStock": false
     }
   ]
 }
