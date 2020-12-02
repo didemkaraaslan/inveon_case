@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cardMedia: {
     width: "100%",
-    height: 300,
+    // height: 300,
     textAlign: "center",
   },
   cardContent: {
@@ -37,9 +37,10 @@ const useStyles = makeStyles((theme) => ({
   price: {
     fontWeight: 600,
     textAlign: "center",
-    position: "absolute",
-    bottom: "-10px",
-    right: "40%",
+  },
+  detail: {
+    height: 50,
+    overflow: "hidden",
   },
   shape: {
     width: 22,
@@ -86,6 +87,7 @@ const Product = ({ product }) => {
       <Card className={classes.card}>
         <CardMedia
           component="img"
+          height="500"
           className={classes.cardMedia}
           image={product?.productImage}
           title="Image title"
@@ -94,7 +96,9 @@ const Product = ({ product }) => {
           <Typography gutterBottom variant="h5" component="h2">
             {product?.productBrand}
           </Typography>
-          <Typography>{product?.productDetail}</Typography>
+          <Typography className={classes.detail}>
+            {product?.productDetail}
+          </Typography>
 
           <Typography
             gutterBottom
