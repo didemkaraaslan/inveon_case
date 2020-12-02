@@ -3,7 +3,7 @@ const fs = require("fs-extra");
 
 export const getProducts = () => async (dispatch) => {
   const { products } = await fs.readJson("data/products.json");
-  return dispatch({
+  dispatch({
     type: types.FETCH_PRODUCTS,
     payload: ["sss"],
   });
