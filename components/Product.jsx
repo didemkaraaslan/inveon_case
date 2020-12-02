@@ -27,6 +27,8 @@ const useStyles = makeStyles((theme) => ({
   },
   cardContent: {
     flexGrow: 1,
+    position: "relative",
+    minHeight: "120px",
   },
   fadeColor: {
     fontWeight: "normal",
@@ -35,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
   price: {
     fontWeight: 600,
     textAlign: "center",
+    position: "absolute",
+    bottom: "-10px",
+    right: "40%",
   },
   shape: {
     width: 22,
