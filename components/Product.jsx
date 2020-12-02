@@ -21,13 +21,12 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   cardMedia: {
-    maxWidth: "100%",
-    height: "350px",
+    width: "100%",
+    height: 300,
     textAlign: "center",
   },
   cardContent: {
     flexGrow: 1,
-    position: "relative",
   },
   fadeColor: {
     fontWeight: "normal",
@@ -36,9 +35,6 @@ const useStyles = makeStyles((theme) => ({
   price: {
     fontWeight: 600,
     textAlign: "center",
-    position: "absolute",
-    bottom: "0px",
-    left: "40%",
   },
   shape: {
     width: 22,
@@ -94,11 +90,6 @@ const Product = ({ product }) => {
             {product?.productBrand}
           </Typography>
           <Typography>{product?.productDetail}</Typography>
-
-          <Typography gutterBottom variant="subtitle2" gutterBottom>
-            Beden:{" "}
-            <span className={classes.fadeColor}>{product?.productSize}</span>
-          </Typography>
 
           <Typography
             gutterBottom
