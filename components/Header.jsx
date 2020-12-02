@@ -1,12 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import SearchIcon from '@material-ui/icons/Search';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Toolbar from "@material-ui/core/Toolbar";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -14,14 +13,6 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbarTitle: {
     flex: 1,
-  },
-  toolbarSecondary: {
-    justifyContent: 'space-between',
-    overflowX: 'auto',
-  },
-  toolbarLink: {
-    padding: theme.spacing(1),
-    flexShrink: 0,
   },
 }));
 
@@ -31,7 +22,7 @@ const Header = () => {
   return (
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
-        <Button size="small">Subscribe</Button>
+        <MoreHorizIcon />
         <Typography
           component="h2"
           variant="h5"
@@ -42,12 +33,13 @@ const Header = () => {
         >
           Inveon Case
         </Typography>
-        <IconButton>
-          <SearchIcon />
-        </IconButton>
+
         <Button variant="outlined" size="small">
-          Sign up
+          Giriş Yap
         </Button>
+        <IconButton color="primary">
+          <ShoppingBasketIcon />
+        </IconButton>
       </Toolbar>
     </React.Fragment>
   );
