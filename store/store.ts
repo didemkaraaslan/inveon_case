@@ -7,6 +7,7 @@ import * as types from "./actions/types";
 
 type ColorsType = "kırmızı" | "yeşil" | "mavi";
 type SizesType = "s" | "m" | "l" | "xl";
+type CategoriesType = "female" | "male";
 
 export interface Product {
   productID: string;
@@ -14,12 +15,14 @@ export interface Product {
   productPrice: number;
   productColor: ColorsType;
   productSize: SizesType;
+  productCategory: CategoriesType;
   inStock: boolean;
 }
 
 export interface Filter {
   colors: Array<ColorsType>;
-  size: Array<SizesType>;
+  sizes: Array<SizesType>;
+  categories: Array<CategoriesType>;
 }
 
 export interface State {
@@ -34,6 +37,8 @@ const reducer = (
     basket: [],
     filters: {
       colors: [],
+      sizes: [],
+      categories: [],
     },
   },
   action: AnyAction

@@ -6,7 +6,6 @@ import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
-import Footer from "../components/Footer";
 import ProductList from "../components/ProductList";
 import * as types from "../store/actions/types";
 const fs = require("fs-extra");
@@ -20,11 +19,23 @@ const useStyles = makeStyles((theme) => ({
 export default function Home() {
   const filteredProducts = useSelector<State, Array<Product>>((state) => {
     let products = state.products;
-    // Apply Filters Here
-    const { colors } = state.filters;
+    const { colors, sizes, categories } = state.filters;
+
     if (colors.length > 0) {
-      return products.filter((product) =>
+      products = products.filter((product) =>
         colors.includes(product.productColor)
+      );
+    }
+
+    if (sizes.length > 0) {
+      products = products.filter((product) =>
+        sizes.includes(product.productSize)
+      );
+    }
+
+    if (categories.length > 0) {
+      products = products.filter((product) =>
+        categories.includes(product.productCategory)
       );
     }
 
