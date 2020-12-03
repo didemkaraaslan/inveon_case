@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -130,10 +130,3 @@ const Product = ({ product }) => {
 };
 
 export default Product;
-
-// "productID": "5fc686279cf73f79e855477e",
-// "productName": "Kayla",
-// "productPrice": 519,
-// "productColor": "mavi",
-// "productSize": "l",
-// "inStock": true

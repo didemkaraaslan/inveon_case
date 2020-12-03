@@ -1,16 +1,10 @@
-import {
-  createStore,
-  AnyAction,
-  applyMiddleware,
-  combineReducers,
-} from 'redux';
+import { createStore, AnyAction, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import { MakeStore, createWrapper, Context, HYDRATE } from 'next-redux-wrapper';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import * as types from './actions/types';
 import { color, size } from '../enum.js';
-import { ActionType } from 'redux-promise-middleware';
 
 export interface Product {
   productID: string;
