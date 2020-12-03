@@ -6,7 +6,7 @@
       "productDetail": "Kadın Kırmızı Tek Cepli Oduncu Gömlek",
       "productImage": "https://cdn.dsmcdn.com//ty12/product/media/images/20200918/9/11057939/87145511/1/1_org.jpg",
       "productPrice": 40,
-      "productColor": "kırmızı",
+      "productColor": "red",
       "productSize": "s",
       "productCategory": "female",
       "inStock": true
@@ -17,7 +17,7 @@
       "productDetail": "Kadın Pudra Mont",
       "productImage": "https://cdn.dsmcdn.com//ty19/product/media/images/20201104/19/22433252/100986848/1/1_org.jpg",
       "productPrice": 519,
-      "productColor": "pudra",
+      "productColor": "powder",
       "productSize": "l",
       "productCategory": "female",
       "inStock": true
@@ -28,7 +28,7 @@
       "productDetail": "Kadın Mor Peluş Sımsıcak Fermuarlı Cepli Mont",
       "productImage": "https://cdn.dsmcdn.com//ty26/product/media/images/20201125/15/32404191/112656482/1/1_org.jpg",
       "productPrice": 519,
-      "productColor": "mor",
+      "productColor": "purple",
       "productSize": "l",
       "productCategory": "female",
       "inStock": true
@@ -39,7 +39,7 @@
       "productDetail": "Kadın Kırmızı Karpuz Kol Kaşe Gömlek",
       "productImage": "https://cdn.dsmcdn.com//assets/product/media/images/20200114/14/2204609/62033613/1/1_org.jpg",
       "productPrice": 190,
-      "productColor": "kırmızı",
+      "productColor": "red",
       "productSize": "xl",
       "productCategory": "female",
       "inStock": false
@@ -50,7 +50,7 @@
       "productDetail": "Yeşil Fırfırlı Mini Etek",
       "productImage": "https://cdn.dsmcdn.com//ty10/product/media/images/20200810/13/7724005/80947932/1/1_org.jpg",
       "productPrice": 218,
-      "productColor": "yeşil",
+      "productColor": "green",
       "productSize": "s",
       "productCategory": "female",
       "inStock": false
@@ -61,7 +61,7 @@
       "productDetail": "Erkek Mavi Core Jcoroad Sweat",
       "productImage": "https://cdn.dsmcdn.com//ty26/product/media/images/20201123/18/30551917/81660231/1/1_org_zoom.jpeg",
       "productPrice": 135,
-      "productColor": "mavi",
+      "productColor": "blue",
       "productSize": "m",
       "productCategory": "male",
       "inStock": true
@@ -72,7 +72,7 @@
       "productDetail": "Jean Pantolon",
       "productImage": "https://cdn.dsmcdn.com//ty6/product/media/images/20200710/14/4074021/17575696/1/1_org.jpg",
       "productPrice": 309,
-      "productColor": "mavi",
+      "productColor": "blue",
       "productSize": "s",
       "productCategory": "male",
       "inStock": true
@@ -83,7 +83,7 @@
       "productDetail": "Erkek Sweetshirt",
       "productImage": "https://cdn.dsmcdn.com//ty6/product/media/images/20200708/13/3900231/55460996/1/1_org.jpg",
       "productPrice": 439,
-      "productColor": "kırmızı",
+      "productColor": "red",
       "productSize": "s",
       "productCategory": "male",
       "inStock": false
@@ -94,7 +94,7 @@
       "productDetail": "Siyah Erkek Beli Paçası Lastikli Eşofman Altı",
       "productImage": "https://cdn.dsmcdn.com//ty12/product/media/images/20200918/8/11056991/61562291/2/2_org.jpg",
       "productPrice": 159,
-      "productColor": "siyah",
+      "productColor": "black",
       "productSize": "s",
       "productCategory": "male",
       "inStock": true
@@ -105,7 +105,7 @@
       "productDetail": "Erkek Eşofman Altı",
       "productImage": "https://cdn.dsmcdn.com//ty23/product/media/images/20201119/16/29018091/106964757/1/1_org.jpg",
       "productPrice": 144,
-      "productColor": "yeşil",
+      "productColor": "green",
       "productSize": "l",
       "productCategory": "male",
       "inStock": true
@@ -116,7 +116,7 @@
       "productDetail": "Mor Basic Jogger Örme Eşofman Altı",
       "productImage": "https://cdn.dsmcdn.com/mnresize/415/622/ty11/product/media/images/20200905/23/9833430/84255263/1/1_org.jpg",
       "productPrice": 486,
-      "productColor": "mor",
+      "productColor": "purple",
       "productSize": "xl",
       "productCategory": "female",
       "inStock": false
@@ -127,7 +127,7 @@
       "productDetail": "Mavi Önden Düğmeli Jeggin Jean",
       "productImage": "https://cdn.dsmcdn.com/mnresize/415/622/ty12/product/media/images/20200907/15/9963576/84726017/1/1_org.jpg",
       "productPrice": 498,
-      "productColor": "mavi",
+      "productColor": "blue",
       "productSize": "l",
       "productCategory": "female",
       "inStock": true

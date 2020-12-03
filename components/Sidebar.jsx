@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
+import React, { useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
+import FormGroup from "@material-ui/core/FormGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+import {
+  addColorFilter,
+  removeColorFilter,
+  addSizeFilter,
+  removeSizeFilter,
+  addCategoryFilter,
+  removeCategoryFilter,
+} from "../store/actions/product";
 
 const useStyles = makeStyles((theme) => ({
   sidebarAboutBox: {
@@ -24,22 +32,22 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const sidebar = {
-  title: 'Filtreler',
-  description: 'Ürünleri renk, beden ve fiyatlarına göre filtreleyin',
+  title: "Filtreler",
+  description: "Ürünleri renk, beden ve fiyatlarına göre filtreleyin",
   category: [
-    { key: 'male', name: 'Erkek' },
-    { key: 'female', name: 'Kadın' },
+    { key: "male", name: "Erkek" },
+    { key: "female", name: "Kadın" },
   ],
   size: [
-    { key: 's', name: 'S' },
-    { key: 'm', name: 'M' },
-    { key: 'l', name: 'L' },
-    { key: 'xl', name: 'XL' },
+    { key: "s", name: "S" },
+    { key: "m", name: "M" },
+    { key: "l", name: "L" },
+    { key: "xl", name: "XL" },
   ],
   color: [
-    { key: 'red', name: 'Kırmızı' },
-    { key: 'green', name: 'Yeşil' },
-    { key: 'blue', name: 'Mavi' },
+    { key: "red", name: "Kırmızı" },
+    { key: "green", name: "Yeşil" },
+    { key: "blue", name: "Mavi" },
   ],
 };
 

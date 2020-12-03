@@ -1,3 +1,18 @@
-export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';
-export const ADD_TO_BASKET = 'ADD_TO_BASKET';
-export const REMOVE_FROM_BASKET = 'REMOVE_FROM_BASKET';
+// Product
+export const FETCH_PRODUCTS = "FETCH_PRODUCTS";
+
+// Basket
+export const ADD_TO_BASKET = "ADD_TO_BASKET";
+export const REMOVE_FROM_BASKET = "REMOVE_FROM_BASKET";
+
+// Color Filter
+export const ADD_COLOR_FILTER = "ADD_COLOR_FILTER";
+export const REMOVE_COLOR_FILTER = "REMOVE_COLOR_FILTER";
+
+// Size Filter
+export const ADD_SIZE_FILTER = "ADD_SIZE_FILTER";
+export const REMOVE_SIZE_FILTER = "REMOVE_SIZE_FILTER";
+
+// Category Filter
+export const ADD_CATEGORY_FILTER = "ADD_CATEGORY_FILTER";
+export const REMOVE_CATEGORY_FILTER = "REMOVE_CATEGORY_FILTER";
