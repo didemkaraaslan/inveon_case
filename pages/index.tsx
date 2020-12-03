@@ -1,19 +1,15 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { wrapper, State } from "../store/store";
-import Grid from "@material-ui/core/Grid";
-import Container from "@material-ui/core/Container";
-import { makeStyles } from "@material-ui/core/styles";
-import Header from "../components/Header";
-import Sidebar from "../components/Sidebar";
-import Footer from "../components/Footer";
-import ProductList from "../components/ProductList";
-import { getProducts } from "../store/actions/product";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import * as types from "../store/actions/types";
-const fs = require("fs-extra");
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { wrapper, State } from '../store/store';
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
+import { makeStyles } from '@material-ui/core/styles';
+import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
+import Footer from '../components/Footer';
+import ProductList from '../components/ProductList';
+import * as types from '../store/actions/types';
+const fs = require('fs-extra');
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -22,11 +18,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Home() {
-  const classes = useStyles();
-
-  const dispatch = useDispatch();
   const { products } = useSelector<State, State>((state) => state);
 
+  const classes = useStyles();
   return (
     <>
       <Container maxWidth="lg">
@@ -44,7 +38,7 @@ export default function Home() {
 
 export const getStaticProps = wrapper.getStaticProps(
   async ({ store, preview }) => {
-    const { products } = await fs.readJson("data/products.json");
+    const { products } = await fs.readJson('data/products.json');
     store.dispatch({ type: types.FETCH_PRODUCTS, payload: products });
   }
 );

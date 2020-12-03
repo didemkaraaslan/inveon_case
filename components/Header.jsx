@@ -1,11 +1,14 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Toolbar from "@material-ui/core/Toolbar";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
-import Typography from "@material-ui/core/Typography";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { State } from '../store/store';
+import { useSelector, useDispatch } from 'react-redux';
+import Toolbar from '@material-ui/core/Toolbar';
+import Badge from '@material-ui/core/Badge';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -17,8 +20,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Header = () => {
-  const classes = useStyles();
+  const basket = useSelector((state) => state.basket);
+  const numberOfBasketItems = basket.length;
 
+  const classes = useStyles();
   return (
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
@@ -38,7 +43,9 @@ const Header = () => {
           Giriş Yap
         </Button>
         <IconButton color="primary">
-          <ShoppingBasketIcon />
+          <Badge badgeContent={numberOfBasketItems} color="secondary">
+            <ShoppingBasketIcon />
+          </Badge>
         </IconButton>
       </Toolbar>
     </React.Fragment>
