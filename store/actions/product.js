@@ -15,3 +15,10 @@ export const addToBasket = (product) => (dispatch) => {
     payload: product,
   });
 };
+
+export const removeFromBasket = (productID) => (dispatch) => {
+  dispatch({
+    type: types.REMOVE_FROM_BASKET,
+    payload: productID,
+  });
+};

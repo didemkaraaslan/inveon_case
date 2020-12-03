@@ -10,6 +10,7 @@ import { MakeStore, createWrapper, Context, HYDRATE } from 'next-redux-wrapper';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import * as types from './actions/types';
 import { color, size } from '../enum.js';
+import { ActionType } from 'redux-promise-middleware';
 
 export interface Product {
   productID: string;
@@ -42,6 +43,14 @@ const reducer = (
 
       if (isInTheBasket) return { ...state };
       return { ...state, basket: [action.payload, ...state.basket] };
+
+    case types.REMOVE_FROM_BASKET:
+      return {
+        ...state,
+        basket: state.basket.filter(
+          (item) => item.productID !== action.payload
+        ),
+      };
     default:
       return state;
   }

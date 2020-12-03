@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
-import clsx from 'clsx';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import Tooltip from '@material-ui/core/Tooltip';
 import Avatar from '@material-ui/core/Avatar';
+import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import Popover from '@material-ui/core/Popover';
 import Grid from '@material-ui/core/Grid';
+import CloseIcon from '@material-ui/icons/CloseSharp';
+import { removeFromBasket } from '../store/actions/product';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,11 +23,19 @@ const useStyles = makeStyles((theme) => ({
   inline: {
     display: 'inline',
   },
+  price: {
+    marginTop: theme.spacing(1),
+  },
 }));
 
 const MiniBasket = ({ id, anchorEl, open, handleClose, basket }) => {
-  const classes = useStyles();
+  const dispatch = useDispatch();
 
+  const handleRemoveFromBasket = (productID) => {
+    dispatch(removeFromBasket(productID));
+  };
+
+  const classes = useStyles();
   return (
     <Popover
       id={id}
@@ -93,10 +104,28 @@ const MiniBasket = ({ id, anchorEl, open, handleClose, basket }) => {
                       }
                     />
                   </Grid>
-                  <Grid item xs={4}>
-                    <Typography variant="h6" color="secondary">
+                  <Grid item xs={2}>
+                    <Typography
+                      variant="h6"
+                      color="secondary"
+                      className={classes.price}
+                    >
                       {product?.productPrice} TL
                     </Typography>
+                  </Grid>
+
+                  <Grid item xs={2}>
+                    <Tooltip title="Sepetten Çıkar" aria-label="Remove">
+                      <IconButton
+                        edge="end"
+                        aria-label="delete"
+                        onClick={() =>
+                          handleRemoveFromBasket(product.productID)
+                        }
+                      >
+                        <CloseIcon />
+                      </IconButton>
+                    </Tooltip>
                   </Grid>
                 </Grid>
               </ListItem>

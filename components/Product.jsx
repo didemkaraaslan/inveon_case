@@ -24,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
   },
   cardMedia: {
     width: '100%',
-    // height: 300,
     textAlign: 'center',
   },
   cardContent: {
