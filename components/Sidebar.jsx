@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
@@ -52,38 +53,41 @@ const sidebar = {
 };
 
 const Sidebar = (props) => {
-  const [checkedCategories, setCheckedCategories] = useState(new Map());
-  const [checkedSizes, setCheckedSizes] = useState(new Map());
-  const [checkedColors, setCheckedColors] = useState(new Map());
+  const dispatch = useDispatch();
+
+  const { colors, sizes, categories } = useSelector((state) => state.filters);
 
   const handleCategory = (event) => {
     const item = event.target.name;
     const isChecked = event.target.checked;
 
-    let copy = checkedCategories;
-    copy.set(item, isChecked);
-
-    setCheckedCategories(copy);
+    if (isChecked) {
+      dispatch(addCategoryFilter(item));
+    } else {
+      dispatch(removeCategoryFilter(item));
+    }
   };
 
   const handleColor = (event) => {
     const item = event.target.name;
     const isChecked = event.target.checked;
 
-    let copy = checkedColors;
-    copy.set(item, isChecked);
-
-    setCheckedColors(copy);
+    if (isChecked) {
+      dispatch(addColorFilter(item));
+    } else {
+      dispatch(removeColorFilter(item));
+    }
   };
 
   const handleSize = (event) => {
     const item = event.target.name;
     const isChecked = event.target.checked;
 
-    let copy = checkedSizes;
-    copy.set(item, isChecked);
-
-    setCheckedSizes(copy);
+    if (isChecked) {
+      dispatch(addSizeFilter(item));
+    } else {
+      dispatch(removeSizeFilter(item));
+    }
   };
 
   const { title, description, category, size, color } = sidebar;
@@ -108,7 +112,7 @@ const Sidebar = (props) => {
               key={item.key}
               control={
                 <Checkbox
-                  checked={checkedCategories.get(item.key)}
+                  checked={categories.includes(item.key)}
                   name={item.key}
                   onChange={handleCategory}
                 />
@@ -130,7 +134,7 @@ const Sidebar = (props) => {
               key={item.key}
               control={
                 <Checkbox
-                  checked={checkedSizes.get(item.key)}
+                  checked={sizes.includes(item.key)}
                   name={item.key}
                   onChange={handleSize}
                 />
@@ -152,7 +156,7 @@ const Sidebar = (props) => {
               key={item.key}
               control={
                 <Checkbox
-                  checked={checkedColors.get(item.key)}
+                  checked={colors.includes(item.key)}
                   name={item.key}
                   onChange={handleColor}
                 />
