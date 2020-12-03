@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import Typography from '@material-ui/core/Typography';
+import MiniBasket from './MiniBasket';
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -21,8 +22,21 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
   const basket = useSelector((state) => state.basket);
-  const numberOfBasketItems = basket.length;
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
+
+  const numberOfBasketItems = basket.length;
   const classes = useStyles();
   return (
     <React.Fragment>
@@ -42,11 +56,18 @@ const Header = () => {
         <Button variant="outlined" size="small">
           Giriş Yap
         </Button>
-        <IconButton color="primary">
+
+        <IconButton aria-describedby={id} color="primary" onClick={handleClick}>
           <Badge badgeContent={numberOfBasketItems} color="secondary">
             <ShoppingBasketIcon />
           </Badge>
         </IconButton>
+        <MiniBasket
+          id={id}
+          anchorEl={anchorEl}
+          open={open}
+          handleClose={handleClose}
+        />
       </Toolbar>
     </React.Fragment>
   );
