@@ -62,11 +62,13 @@ const Header = () => {
             <ShoppingBasketIcon />
           </Badge>
         </IconButton>
+
         <MiniBasket
           id={id}
           anchorEl={anchorEl}
           open={open}
           handleClose={handleClose}
+          basket={basket}
         />
       </Toolbar>
     </React.Fragment>
