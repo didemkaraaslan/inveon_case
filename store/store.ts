@@ -1,27 +1,41 @@
-import { createStore, AnyAction, applyMiddleware } from 'redux';
-import logger from 'redux-logger';
-import thunk from 'redux-thunk';
-import { MakeStore, createWrapper, Context, HYDRATE } from 'next-redux-wrapper';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import * as types from './actions/types';
-import { color, size } from '../enum.js';
+import { createStore, AnyAction, applyMiddleware } from "redux";
+import logger from "redux-logger";
+import thunk from "redux-thunk";
+import { MakeStore, createWrapper, Context, HYDRATE } from "next-redux-wrapper";
+import { composeWithDevTools } from "redux-devtools-extension";
+import * as types from "./actions/types";
+
+type ColorsType = "kırmızı" | "yeşil" | "mavi";
+type SizesType = "s" | "m" | "l" | "xl";
 
 export interface Product {
   productID: string;
   productName: string;
   productPrice: number;
-  productColor: color;
-  productSize: size;
+  productColor: ColorsType;
+  productSize: SizesType;
   inStock: boolean;
+}
+
+export interface Filter {
+  colors: Array<ColorsType>;
+  size: Array<SizesType>;
 }
 
 export interface State {
   products: Array<Product>;
   basket: Array<Product>;
+  filters: Filter;
 }
 
 const reducer = (
-  state: State = { products: [], basket: [] },
+  state: State = {
+    products: [],
+    basket: [],
+    filters: {
+      colors: [],
+    },
+  },
   action: AnyAction
 ) => {
   switch (action.type) {

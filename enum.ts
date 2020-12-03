@@ -1,7 +1,7 @@
 export const enum color {
-  "Kırmızı",
-  "Yeşil",
-  "Mavi",
+  "kırmızı",
+  "yeşil",
+  "mavi",
 }
 
 export const enum size {
