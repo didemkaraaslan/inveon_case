@@ -1,11 +1,11 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import FormGroup from "@material-ui/core/FormGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 
 const useStyles = makeStyles((theme) => ({
   sidebarAboutBox: {
@@ -24,30 +24,62 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const sidebar = {
-  title: "Filtreler",
-  description: "Ürünleri renk, beden ve fiyatlarına göre filtreleyin",
+  title: 'Filtreler',
+  description: 'Ürünleri renk, beden ve fiyatlarına göre filtreleyin',
   category: [
-    { key: "male", name: "Erkek" },
-    { key: "female", name: "Kadın" },
+    { key: 'male', name: 'Erkek' },
+    { key: 'female', name: 'Kadın' },
   ],
   size: [
-    { key: "s", name: "S" },
-    { key: "m", name: "M" },
-    { key: "l", name: "L" },
-    { key: "xl", name: "XL" },
+    { key: 's', name: 'S' },
+    { key: 'm', name: 'M' },
+    { key: 'l', name: 'L' },
+    { key: 'xl', name: 'XL' },
   ],
   color: [
-    { key: "red", name: "Kırmızı" },
-    { key: "green", name: "Yeşil" },
-    { key: "blue", name: "Mavi" },
+    { key: 'red', name: 'Kırmızı' },
+    { key: 'green', name: 'Yeşil' },
+    { key: 'blue', name: 'Mavi' },
   ],
 };
 
 const Sidebar = (props) => {
-  const classes = useStyles();
+  const [checkedCategories, setCheckedCategories] = useState(new Map());
+  const [checkedSizes, setCheckedSizes] = useState(new Map());
+  const [checkedColors, setCheckedColors] = useState(new Map());
+
+  const handleCategory = (event) => {
+    const item = event.target.name;
+    const isChecked = event.target.checked;
+
+    let copy = checkedCategories;
+    copy.set(item, isChecked);
+
+    setCheckedCategories(copy);
+  };
+
+  const handleColor = (event) => {
+    const item = event.target.name;
+    const isChecked = event.target.checked;
+
+    let copy = checkedColors;
+    copy.set(item, isChecked);
+
+    setCheckedColors(copy);
+  };
+
+  const handleSize = (event) => {
+    const item = event.target.name;
+    const isChecked = event.target.checked;
+
+    let copy = checkedSizes;
+    copy.set(item, isChecked);
+
+    setCheckedSizes(copy);
+  };
 
   const { title, description, category, size, color } = sidebar;
-
+  const classes = useStyles();
   return (
     <Grid item xs={12} md={2}>
       <Paper elevation={0} className={classes.sidebarAboutBox}>
@@ -66,7 +98,13 @@ const Sidebar = (props) => {
           {category.map((item) => (
             <FormControlLabel
               key={item.key}
-              control={<Checkbox defaultChecked name="gilad" />}
+              control={
+                <Checkbox
+                  checked={checkedCategories.get(item.key)}
+                  name={item.key}
+                  onChange={handleCategory}
+                />
+              }
               label={item?.name}
             />
           ))}
@@ -82,7 +120,13 @@ const Sidebar = (props) => {
           {size.map((item) => (
             <FormControlLabel
               key={item.key}
-              control={<Checkbox defaultChecked name="gilad" />}
+              control={
+                <Checkbox
+                  checked={checkedSizes.get(item.key)}
+                  name={item.key}
+                  onChange={handleSize}
+                />
+              }
               label={item?.name}
             />
           ))}
@@ -98,7 +142,13 @@ const Sidebar = (props) => {
           {color.map((item) => (
             <FormControlLabel
               key={item.key}
-              control={<Checkbox defaultChecked name="gilad" />}
+              control={
+                <Checkbox
+                  checked={checkedColors.get(item.key)}
+                  name={item.key}
+                  onChange={handleColor}
+                />
+              }
               label={item?.name}
             />
           ))}
