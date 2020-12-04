@@ -60,7 +60,7 @@ const Sidebar: React.FC = () => {
   );
 
   const handleCategory = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const item = event.target.name;
+    const item: CategoriesType = event.target.name as CategoriesType;
     const isChecked = event.target.checked;
 
     if (isChecked) {
@@ -71,7 +71,7 @@ const Sidebar: React.FC = () => {
   };
 
   const handleColor = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const item = event.target.name;
+    const item: ColorsType = event.target.name as ColorsType;
     const isChecked = event.target.checked;
 
     if (isChecked) {
@@ -82,7 +82,7 @@ const Sidebar: React.FC = () => {
   };
 
   const handleSize = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const item = event.target.name;
+    const item: SizesType = event.target.name as SizesType;
     const isChecked = event.target.checked;
 
     if (isChecked) {
@@ -114,7 +114,7 @@ const Sidebar: React.FC = () => {
               key={item.key}
               control={
                 <Checkbox
-                  checked={categories.includes(item.key)}
+                  checked={categories.includes(item.key as CategoriesType)}
                   name={item.key}
                   onChange={handleCategory}
                 />
@@ -136,7 +136,7 @@ const Sidebar: React.FC = () => {
               key={item.key}
               control={
                 <Checkbox
-                  checked={sizes.includes(item.key)}
+                  checked={sizes.includes(item.key as SizesType)}
                   name={item.key}
                   onChange={handleSize}
                 />
@@ -158,7 +158,7 @@ const Sidebar: React.FC = () => {
               key={item.key}
               control={
                 <Checkbox
-                  checked={colors.includes(item.key)}
+                  checked={colors.includes(item.key as ColorsType)}
                   name={item.key}
                   onChange={handleColor}
                 />
