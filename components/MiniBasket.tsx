@@ -64,7 +64,6 @@ const MiniBasket: React.FC<MiniBasketProps> = ({
         vertical: "top",
         horizontal: "center",
       }}
-      className={classes.popover}
     >
       <List className={classes.root}>
         {basket.length <= 0 ? (
