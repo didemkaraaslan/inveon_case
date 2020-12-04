@@ -12,7 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import Popover from '@material-ui/core/Popover';
 import Grid from '@material-ui/core/Grid';
 import CloseIcon from '@material-ui/icons/CloseSharp';
-import { removeFromBasket } from '../store/actions/product';
+import { removeFromBasket } from '../store/actions/basketActions';
 
 const useStyles = makeStyles((theme) => ({
   root: {

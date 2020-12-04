@@ -1,13 +1,18 @@
-import { createStore, AnyAction, applyMiddleware } from "redux";
-import logger from "redux-logger";
-import thunk from "redux-thunk";
-import { MakeStore, createWrapper, Context, HYDRATE } from "next-redux-wrapper";
-import { composeWithDevTools } from "redux-devtools-extension";
-import * as types from "./actions/types";
+import {
+  createStore,
+  AnyAction,
+  applyMiddleware,
+  combineReducers,
+} from 'redux';
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
+import { MakeStore, createWrapper, Context, HYDRATE } from 'next-redux-wrapper';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import * as types from './actions/types';
 
-type ColorsType = "red" | "green" | "blue";
-type SizesType = "s" | "m" | "l" | "xl";
-type CategoriesType = "female" | "male";
+type ColorsType = 'red' | 'green' | 'blue';
+type SizesType = 's' | 'm' | 'l' | 'xl';
+type CategoriesType = 'female' | 'male';
 
 export interface Product {
   productID: string;
