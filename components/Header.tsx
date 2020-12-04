@@ -8,7 +8,7 @@ import IconButton from "@material-ui/core/IconButton";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import Typography from "@material-ui/core/Typography";
-import MiniBasket from "./MiniBasket.tsx";
+import MiniBasket from "./MiniBasket";
 
 const useStyles = makeStyles((theme: Theme) => ({
   toolbar: {

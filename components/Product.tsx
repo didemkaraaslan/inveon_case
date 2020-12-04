@@ -8,13 +8,13 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, Theme } from "@material-ui/core/styles";
 import purple from "@material-ui/core/colors/purple";
 import red from "@material-ui/core/colors/red";
 import green from "@material-ui/core/colors/green";
 import blue from "@material-ui/core/colors/blue";
 import pink from "@material-ui/core/colors/pink";
-import { addToBasket } from "../store/actions/basketActions.ts";
+import { addToBasket } from "../store/actions/basketActions";
 
 const useStyles = makeStyles((theme: Theme) => ({
   card: {

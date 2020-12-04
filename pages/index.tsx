@@ -4,9 +4,9 @@ import { wrapper } from "../store/store";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
-import Header from "../components/Header.tsx";
-import Sidebar from "../components/Sidebar.tsx";
-import ProductList from "../components/ProductList.tsx";
+import Header from "../components/Header";
+import Sidebar from "../components/Sidebar";
+import ProductList from "../components/ProductList";
 import * as types from "../store/actions/types";
 const fs = require("fs-extra");
 

@@ -14,7 +14,7 @@ import {
   removeSizeFilter,
   addCategoryFilter,
   removeCategoryFilter,
-} from "../store/actions/filterActions.ts";
+} from "../store/actions/filterActions";
 
 const useStyles = makeStyles((theme: Theme) => ({
   sidebarAboutBox: {

@@ -1,5 +1,4 @@
-import React, { FC, useEffect } from "react";
-import PropTypes from "prop-types";
+import React, { FC } from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";

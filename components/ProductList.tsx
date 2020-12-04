@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import Product from "./Product.tsx";
+import Product from "./Product";
 import { makeStyles, Theme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme: Theme) => ({}));
