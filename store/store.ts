@@ -12,7 +12,11 @@ import basketReducer from './reducers/basketReducer';
 import filterReducer from './reducers/filterReducer';
 import productReducer from './reducers/productReducer';
 
-import * as types from './actions/types';
+const rootReducer = combineReducers({
+  basket: basketReducer,
+  products: productReducer,
+  filters: filterReducer,
+});
 
 type ColorsType = 'red' | 'green' | 'blue';
 type SizesType = 's' | 'm' | 'l' | 'xl';
@@ -34,28 +38,11 @@ export interface Filter {
   categories: Array<CategoriesType>;
 }
 
-export interface State {
+interface State {
   products: Array<Product>;
   basket: Array<Product>;
   filters: Filter;
 }
-
-const rootReducer = combineReducers({
-  basket: basketReducer,
-  products: productReducer,
-  filters: filterReducer,
-});
-
-// state: State = {
-//   products: [],
-//   basket: [],
-//   filters: {
-//     colors: [],
-//     sizes: [],
-//     categories: [],
-//   },
-// },
-// action: AnyAction
 
 const makeStore: MakeStore<State> = (context: Context) =>
   createStore(rootReducer, composeWithDevTools(applyMiddleware(logger, thunk)));
