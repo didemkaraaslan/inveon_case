@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, Theme } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -12,9 +12,9 @@ import Typography from "@material-ui/core/Typography";
 import Popover from "@material-ui/core/Popover";
 import Grid from "@material-ui/core/Grid";
 import CloseIcon from "@material-ui/icons/CloseSharp";
-import { removeFromBasket } from "../store/actions/basketActions.ts";
+import { removeFromBasket } from "../store/actions/basketActions";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   root: {
     width: "100%",
     // maxWidth: '36ch',
@@ -28,10 +28,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MiniBasket = ({ id, anchorEl, open, handleClose, basket }) => {
+interface MiniBasketProps {
+  id: "simple-popover" | undefined;
+  anchorEl: HTMLElement | null;
+  open: boolean;
+  basket: Array<Product>;
+  handleClose: () => void;
+}
+
+const MiniBasket: React.FC<MiniBasketProps> = ({
+  id,
+  anchorEl,
+  open,
+  handleClose,
+  basket,
+}) => {
   const dispatch = useDispatch();
 
-  const handleRemoveFromBasket = (productID) => {
+  const handleRemoveFromBasket = (productID: string) => {
     dispatch(removeFromBasket(productID));
   };
 
@@ -62,7 +76,7 @@ const MiniBasket = ({ id, anchorEl, open, handleClose, basket }) => {
           </ListItem>
         ) : (
           <>
-            {basket.map((product) => (
+            {basket.map((product: Product) => (
               <ListItem alignItems="flex-start" key={product.productID}>
                 <ListItemAvatar>
                   <Avatar alt="Remy Sharp" src={product?.productImage} />

@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { wrapper, State, Product } from '../store/store';
-import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
-import { makeStyles } from '@material-ui/core/styles';
-import Header from '../components/Header';
-import Sidebar from '../components/Sidebar';
-import ProductList from '../components/ProductList';
-import * as types from '../store/actions/types';
-const fs = require('fs-extra');
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { wrapper } from "../store/store";
+import Grid from "@material-ui/core/Grid";
+import Container from "@material-ui/core/Container";
+import { makeStyles } from "@material-ui/core/styles";
+import Header from "../components/Header.tsx";
+import Sidebar from "../components/Sidebar.tsx";
+import ProductList from "../components/ProductList.tsx";
+import * as types from "../store/actions/types";
+const fs = require("fs-extra");
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -60,7 +60,7 @@ export default function Home() {
 
 export const getStaticProps = wrapper.getStaticProps(
   async ({ store, preview }) => {
-    const { products } = await fs.readJson('data/products.json');
+    const { products } = await fs.readJson("data/products.json");
     store.dispatch({ type: types.FETCH_PRODUCTS, payload: products });
   }
 );

@@ -5,6 +5,9 @@ type CategoriesType = "female" | "male";
 interface Product {
   productID: string;
   productName: string;
+  productBrand: string;
+  productDetail: string;
+  productImage: string;
   productPrice: number;
   productColor: ColorsType;
   productSize: SizesType;

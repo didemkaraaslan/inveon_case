@@ -1,17 +1,16 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { State } from '../store/store';
-import { useSelector, useDispatch } from 'react-redux';
-import Toolbar from '@material-ui/core/Toolbar';
-import Badge from '@material-ui/core/Badge';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
-import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import Typography from '@material-ui/core/Typography';
-import MiniBasket from './MiniBasket';
+import React from "react";
+import { makeStyles, Theme } from "@material-ui/core/styles";
+import { useSelector, useDispatch } from "react-redux";
+import Toolbar from "@material-ui/core/Toolbar";
+import Badge from "@material-ui/core/Badge";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+import Typography from "@material-ui/core/Typography";
+import MiniBasket from "./MiniBasket.tsx";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
   },
@@ -20,12 +19,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Header = () => {
-  const basket = useSelector((state) => state.basket);
+const Header: React.FC = () => {
+  const basket = useSelector<State, Array<Product>>((state) => state.basket);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleClick = (event) => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -34,7 +33,7 @@ const Header = () => {
   };
 
   const open = Boolean(anchorEl);
-  const id = open ? 'simple-popover' : undefined;
+  const id = open ? "simple-popover" : undefined;
 
   const numberOfBasketItems = basket.length;
   const classes = useStyles();

@@ -16,7 +16,7 @@ import blue from "@material-ui/core/colors/blue";
 import pink from "@material-ui/core/colors/pink";
 import { addToBasket } from "../store/actions/basketActions.ts";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   card: {
     height: "100%",
     display: "flex",
@@ -71,14 +71,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Product = ({ product }) => {
+interface ProductProps {
+  product: Product;
+}
+const Product: React.FC<ProductProps> = ({ product }) => {
   const dispatch = useDispatch();
-  const handleAddToBasket = (product) => {
+  const handleAddToBasket = (product: Product) => {
     dispatch(addToBasket(product));
   };
 
   const classes = useStyles();
-  const color = product?.productColor;
+  const color: ColorsType = product?.productColor;
   const circleStyle = clsx({
     [classes.shape]: true,
     [classes[color]]: color,

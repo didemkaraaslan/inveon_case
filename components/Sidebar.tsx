@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, Theme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
@@ -16,7 +16,7 @@ import {
   removeCategoryFilter,
 } from "../store/actions/filterActions.ts";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   sidebarAboutBox: {
     padding: theme.spacing(2),
     backgroundColor: theme.palette.grey[200],
@@ -52,12 +52,14 @@ const sidebar = {
   ],
 };
 
-const Sidebar = (props) => {
+const Sidebar: React.FC = () => {
   const dispatch = useDispatch();
 
-  const { colors, sizes, categories } = useSelector((state) => state.filters);
+  const { colors, sizes, categories } = useSelector<State, Filter>(
+    (state) => state.filters
+  );
 
-  const handleCategory = (event) => {
+  const handleCategory = (event: React.ChangeEvent<HTMLInputElement>) => {
     const item = event.target.name;
     const isChecked = event.target.checked;
 
@@ -68,7 +70,7 @@ const Sidebar = (props) => {
     }
   };
 
-  const handleColor = (event) => {
+  const handleColor = (event: React.ChangeEvent<HTMLInputElement>) => {
     const item = event.target.name;
     const isChecked = event.target.checked;
 
@@ -79,7 +81,7 @@ const Sidebar = (props) => {
     }
   };
 
-  const handleSize = (event) => {
+  const handleSize = (event: React.ChangeEvent<HTMLInputElement>) => {
     const item = event.target.name;
     const isChecked = event.target.checked;
 

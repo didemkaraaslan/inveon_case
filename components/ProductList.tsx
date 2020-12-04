@@ -1,11 +1,15 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import Product from "./Product";
-import { makeStyles } from "@material-ui/core/styles";
+import Product from "./Product.tsx";
+import { makeStyles, Theme } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme: Theme) => ({}));
 
-const ProductList = ({ products }) => {
+interface ProductListProps {
+  products: Array<Product>;
+}
+
+const ProductList: React.FC<ProductListProps> = ({ products }) => {
   const classes = useStyles();
   return (
     <Grid container spacing={3} item xs={12} md={10}>
