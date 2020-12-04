@@ -13,6 +13,10 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+# Or For The Demo App
+
+Visit [https://inveon-case.vercel.app/](https://inveon-case.vercel.app/) this site.
+
 # ScreenShot
 
 ## Home Screen
