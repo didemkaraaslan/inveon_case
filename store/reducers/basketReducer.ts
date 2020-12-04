@@ -1,20 +1,6 @@
-import * as types from '../actions/types';
-import { HYDRATE } from 'next-redux-wrapper';
-import { AnyAction } from 'redux';
-
-type ColorsType = 'red' | 'green' | 'blue';
-type SizesType = 's' | 'm' | 'l' | 'xl';
-type CategoriesType = 'female' | 'male';
-
-export interface Product {
-  productID: string;
-  productName: string;
-  productPrice: number;
-  productColor: ColorsType;
-  productSize: SizesType;
-  productCategory: CategoriesType;
-  inStock: boolean;
-}
+import * as types from "../actions/types";
+import { HYDRATE } from "next-redux-wrapper";
+import { AnyAction } from "redux";
 
 const basketReducer = (state: Array<Product> = [], action: AnyAction) => {
   switch (action.type) {

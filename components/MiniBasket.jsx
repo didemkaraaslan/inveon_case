@@ -1,27 +1,27 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { makeStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Tooltip from '@material-ui/core/Tooltip';
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import Popover from '@material-ui/core/Popover';
-import Grid from '@material-ui/core/Grid';
-import CloseIcon from '@material-ui/icons/CloseSharp';
-import { removeFromBasket } from '../store/actions/basketActions';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { makeStyles } from "@material-ui/core/styles";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+import Tooltip from "@material-ui/core/Tooltip";
+import Avatar from "@material-ui/core/Avatar";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import Popover from "@material-ui/core/Popover";
+import Grid from "@material-ui/core/Grid";
+import CloseIcon from "@material-ui/icons/CloseSharp";
+import { removeFromBasket } from "../store/actions/basketActions.ts";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
+    width: "100%",
     // maxWidth: '36ch',
     backgroundColor: theme.palette.background.paper,
   },
   inline: {
-    display: 'inline',
+    display: "inline",
   },
   price: {
     marginTop: theme.spacing(1),
@@ -43,12 +43,12 @@ const MiniBasket = ({ id, anchorEl, open, handleClose, basket }) => {
       anchorEl={anchorEl}
       onClose={handleClose}
       anchorOrigin={{
-        vertical: 'bottom',
-        horizontal: 'center',
+        vertical: "bottom",
+        horizontal: "center",
       }}
       transformOrigin={{
-        vertical: 'top',
-        horizontal: 'center',
+        vertical: "top",
+        horizontal: "center",
       }}
       className={classes.popover}
     >
@@ -57,7 +57,7 @@ const MiniBasket = ({ id, anchorEl, open, handleClose, basket }) => {
           <ListItem alignItems="flex-start">
             <ListItemText
               primary="Sepetiniz bomboş!"
-              secondary={<p>{'Hemen bir şeyler ekleyin :D'}</p>}
+              secondary={<p>{"Hemen bir şeyler ekleyin :D"}</p>}
             />
           </ListItem>
         ) : (
@@ -82,7 +82,7 @@ const MiniBasket = ({ id, anchorEl, open, handleClose, basket }) => {
                             className={classes.inline}
                             color="textPrimary"
                           >
-                            Renk{' '}
+                            Renk{" "}
                           </Typography>
                           - {product?.productColor}
                         </React.Fragment>
@@ -97,7 +97,7 @@ const MiniBasket = ({ id, anchorEl, open, handleClose, basket }) => {
                             className={classes.inline}
                             color="textPrimary"
                           >
-                            Beden{' '}
+                            Beden{" "}
                           </Typography>
                           - {product?.productSize}
                         </React.Fragment>

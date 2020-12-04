@@ -1,16 +1,6 @@
-import * as types from '../actions/types';
-import { HYDRATE } from 'next-redux-wrapper';
-import { AnyAction } from 'redux';
-
-type ColorsType = 'red' | 'green' | 'blue';
-type SizesType = 's' | 'm' | 'l' | 'xl';
-type CategoriesType = 'female' | 'male';
-
-export interface Filter {
-  colors: Array<ColorsType>;
-  sizes: Array<SizesType>;
-  categories: Array<CategoriesType>;
-}
+import * as types from "../actions/types";
+import { HYDRATE } from "next-redux-wrapper";
+import { AnyAction } from "redux";
 
 const initialState = {
   colors: [],
